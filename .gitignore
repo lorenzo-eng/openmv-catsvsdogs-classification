@@ -1,0 +1,5 @@
+model_prepare/.*
+__pycache__
+tensorflow_datasets
+openmv
+libtf_catsvsdogs_classify_model_data.cc

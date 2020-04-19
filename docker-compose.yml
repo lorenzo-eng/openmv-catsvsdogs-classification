@@ -1,0 +1,16 @@
+# docker-compose.yml
+version: '3'
+services:
+  embontf:
+    image: embon/tf
+    user: $UID_GID
+    volumes: 
+      - ./model_prepare:/home/model_prepare
+    working_dir: /home/model_prepare
+    stdin_open: true
+    tty: true
+    environment:
+      - HOME=/home/model_prepare
+
+volumes:
+  model_prepare:
