@@ -36,7 +36,7 @@ Test TFLite model:
 Outputs `build/test_out.png` image containing pictures labeled during the test.
 Convert TFLite model to c src and compile archive to include within OpenMV firmware:
 
-    python mode_carch.py
+    python model_carch.py
 
 Outputs `build/libtf_catsvsdogs_classify_model_data.a` archive.
 It is possible to change some parameters of this process inside the `config.py` file.
