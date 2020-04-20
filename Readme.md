@@ -14,8 +14,15 @@ It is suggested to execute the scripts contained in the `model_prepare` folder w
 
     UID_GID=$(id -u):$(id -g) docker-compose run embontf
 
-exports needed to create a non-root user inside the container to run tf scripts in a safer way.
-Then, the container is started sharing `model_prepare` folder with the host (useful to easily get training output files on the host).
+`UID_GID` variable needed to create a non-root user inside the container to run tf scripts in a safer way.
+
+**n.b** if you run docker with root user, but your non-root user is able to gain root privileges using the `sudo` command, run:
+
+    UID_GID=$(id -u):$(id -g) sudo -E docker-compose run embontf
+
+To preserve environment variables.
+
+The container is started sharing `model_prepare` folder with the host (useful to easily get training output files on the host).
 
 ### Train the model and compile the OpenMV Firmware
 
